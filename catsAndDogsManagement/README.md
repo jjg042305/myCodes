@@ -1,4 +1,4 @@
-## Acts and Dogs Management - LimoDoc
+## Cats and Dogs Management - LimoDoc
 - LimoDoc is a platform dedicated to connecting potential pet owners with cats and dogs in need of loving homes. 
 - The site offers a user-friendly interface to explore available pets, learn about pet care, and manage the adoption process efficiently.
 
