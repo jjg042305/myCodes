@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dog care</title>
+    <style>
+       
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+      
+
+        #links {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            padding: 10px;
+        }
+
+        
+
+        .content {
+            display: grid;
+            grid-template-columns: 25% auto;
+            padding: 20px;
+        }
+
+        a img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+
+        }
+
+        tr {
+            border: 1px solid black;
+
+        }
+
+        nav a {
+            display: block;
+            /* Make the link fill the container */
+            border: 1px solid black;
+            /* Add border to simulate the table cell */
+            margin: -1px;
+            /* Overlap borders to prevent double-thickness lines */
+            padding: 8px;
+            /* Add some padding for aesthetics */
+            text-decoration: none;
+            /* Optional: remove the underline from links */
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+
+    <div id="links">
+        <h3>Find what you're looking for</h3>
+        <div style="display: grid; grid-template-columns: 25% auto;">
+            <nav>
+                <table>
+
+                    <tr>
+                        <td><a href="/home">Home page</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="/find">Find a dog or cat</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/catCare">Cat care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/dogCare">Dog care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/giveaway">Have a pet to give away?</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/contact">Contact us</a></td>
+                    </tr>
+
+                </table>
+            </nav>
+            <div>
+                <h2>Instructions to take care of your dog :</h2>
+                <div>
+                    <h3>Balanced Diet and Nutrition</h3>
+                    <ul>
+                        <li><strong>Quality Food:</strong> Choose high-quality dog food that’s appropriate for the dog's
+                            age, size, and activity level. Puppies, adults, and senior dogs have different nutritional
+                            requirements.</li>
+                        <li><strong>Feeding Schedule:</strong> Establish a regular feeding schedule, usually twice a
+                            day. Avoid overfeeding and provide treats in moderation.</li>
+                        <li><strong>Fresh Water:</strong> Always have fresh water available. Consider a cat water
+                            fountain to encourage hydration, especially if your cat is reluctant to drink still water.
+                        </li>
+                    </ul>
+                </div>
+                <h3>Safe and Comfortable Environment</h3>
+                <div>
+                    <ul>
+                        <li><strong>Shelter:</strong> Provide a safe, cozy space for your dog to sleep and rest indoors.
+                        </li>
+                        <li><strong>Secure Space:</strong> Ensure your home and yard are secure to prevent your dog from
+                            escaping or getting into dangerous substances or plants.</li>
+                    </ul>
+                </div>
+                <h3>Regular Exercise</h3>
+                <div>
+                    <ul>
+                        <li><strong>Daily Exercise:</strong> Dogs need regular physical activity to stay healthy and
+                            happy. The amount varies by breed, size, and age.</li>
+                        <li><strong>Playtime:</strong> Interactive play helps with bonding and keeps your dog mentally
+                            stimulated.
+                        </li>
+                        <li><strong>Grooming</strong> Brush your cat regularly to reduce shedding and hairballs.
+                            Long-haired breeds may require more frequent grooming.
+                        </li>
+                    </ul>
+                </div>
+                <h3>Safe environment:</h3>
+                <div>
+                    <ul>
+                        <li><strong> Keep hazardous materials, like toxic plants and chemicals, out of reach.
+                            </strong></li>
+                        <li><strong> Ensure your home is pet-proofed to prevent accidents.
+                            </strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('partials/footer') %>
+
+    <script src="displayTime.js"></script>
+
+
+
+
+</body>

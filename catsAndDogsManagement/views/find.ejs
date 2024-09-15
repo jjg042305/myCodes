@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Find pets</title>
+    <style>
+        
+        
+       
+        table {
+            border-collapse: collapse;
+
+        }
+
+        tr {
+            border: 1px solid black;
+
+        }
+
+        nav a {
+            display: block;
+            /* Make the link fill the container */
+            border: 1px solid black;
+            /* Add border to simulate the table cell */
+            margin: -1px;
+            /* Overlap borders to prevent double-thickness lines */
+            padding: 8px;
+            /* Add some padding for aesthetics */
+            text-decoration: none;
+            /* Optional: remove the underline from links */
+        }
+
+        nav {
+            padding: 10px;
+        }
+
+        form {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input[type=text],
+        form textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form input[type=submit],
+        form input[type=reset] {
+            width: auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form input[type=submit] {
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        form input[type=reset] {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        form textarea {
+            height: 100px;
+        }
+
+        
+    </style>
+
+
+</head>
+
+<body>
+    
+    <%- include('partials/header') %>
+
+    <div id="links">
+        <h3>Find what you're looking for</h3>
+        <div style="display: flex;">
+            <nav style="width: 25%;">
+                <table>
+
+                    <tr>
+                        <td><a href="/home">Home page</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="/find">Find a dog or cat</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/catCare">Cat care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/dogCare">Dog care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/giveaway">Have a pet to give away?</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/contact">Contact us</a></td>
+                    </tr>
+
+
+                </table>
+            </nav>
+
+            <form id="findForm" action="/find" method="POST" style="text-align:left; margin-left:auto; width:75%">
+                <label for="petType">Cat or Dog?</label>
+                <input type="text" id="petType" name="petType"> <br>
+                <label for="breed">Breed of dog or cat :</label>
+                <input type="text" id="breed" name="breed"> <br>
+                <label for="age">Preferred age of animal (as Integer) :</label>
+                <input type="text" id="age" name="age"> <br>
+                <label for="gender">Preferred gender of animal (male or female) :</label>
+                <input type="text" id="gender" name="gender"> <br>
+                <label for="along">Do you need your cat to get along other pets/ small children?</label>
+                <input type="text" id="along" name="along"> <br>
+                <label for="submit"></label>
+                <input type="submit" id="submit" name="submit">
+                <label for="reset"></label>
+                <input type="reset" id="reset" name="reset"> <br>
+
+            </form>
+        </div>
+    </div>
+    <p id="error-message" style="color: red; display: none;">Please fill out all fields.</p>
+
+    <div id="search-results">
+        <% if (pets && pets.length > 0) { %>
+            <ul>
+                <% pets.forEach(function(pet) { %>
+                    <li>
+                        <h4><%= pet.name %> - <%= pet.type %></h4>
+                        <ul>
+                            <li>Breed: <%= pet.breed %></li>
+                            <li>Age: <%= pet.age %></li>
+                            <li>Gender: <%= pet.gender %></li>
+                            <!-- Display compatibility -->
+                        </ul>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No pets found matching your criteria.</p>
+        <% } %>
+    </div>
+
+
+    <%- include('partials/footer') %>
+
+
+    <script src="clidentSideValidation.js">
+
+    </script>
+
+    <script src="displayTime.js"></script>
+
+
+</body>
+</html>

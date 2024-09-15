@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+    <title>Contact us</title>
+    <style>
+       
+      
+        table {
+            border-collapse: collapse;
+
+        }
+
+        tr {
+            border: 1px solid black;
+
+        }
+
+        nav a {
+            display: block;
+            /* Make the link fill the container */
+            border: 1px solid black;
+            /* Add border to simulate the table cell */
+            margin: -1px;
+            /* Overlap borders to prevent double-thickness lines */
+            padding: 8px;
+            /* Add some padding for aesthetics */
+            text-decoration: none;
+            /* Optional: remove the underline from links */
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+
+    <div id="links">
+        <h3>Find what you're looking for</h3>
+        <div style="display: flex;">
+            <nav style="width: 25%;">
+                <table>
+
+                    <tr>
+                        <td><a href="/home">Home page</a></td>
+                    </tr>
+                   
+                    <tr>
+                        <td><a href="/find">Find a dog or cat</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/browse">Cat care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/catCare">Cat care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/giveaway">Have a pet to give away?</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/contact">Contact us</a></td>
+                    </tr>
+
+
+                </table>
+            </nav>
+
+            <h2>Contact us</h2>
+            <ul>
+                <li><strong>Jean-Jacques Gougassian</strong></li>
+                <li>ID: 40228923</li>
+                <li>Email : jj.gougassian.jr@gmail.com</li>
+                <li>Telephone; +1 514 972 6292</li>
+            </ul>
+            
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="displayTime.js"></script>
+
+
+
+
+</body>

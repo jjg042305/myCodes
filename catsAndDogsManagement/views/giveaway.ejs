@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Give away pets</title>
+    <style>
+       
+        table {
+            border-collapse: collapse;
+
+        }
+
+        tr {
+            border: 1px solid black;
+
+        }
+
+        nav a {
+            display: block;
+            /* Make the link fill the container */
+            border: 1px solid black;
+            /* Add border to simulate the table cell */
+            margin: -1px;
+            /* Overlap borders to prevent double-thickness lines */
+            padding: 8px;
+            /* Add some padding for aesthetics */
+            text-decoration: none;
+            /* Optional: remove the underline from links */
+        }
+
+        form {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input[type=text],
+        form textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form input[type=submit],
+        form input[type=reset] {
+            width: auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form input[type=submit] {
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        form input[type=reset] {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        form textarea {
+            height: 100px;
+        }
+
+        
+    </style>
+
+
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+    <div id="links">
+        <h3>Find what you're looking for</h3>
+        <div style="display: flex;">
+            <nav style="width: 25%;">
+                <table>
+
+                    <tr>
+                        <td><a href="/home">Home page</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="/find">Find a dog or cat</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/catCare">Cat care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/dogCare">Dog care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/giveaway">Have a pet to give away?</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/contact">Contact us</a></td>
+                    </tr>
+
+
+                </table>
+            </nav>
+
+            <form id="formV" action="/submitGiveaway" method="POST" style="text-align:left; margin-left:auto; width:75%">
+                <label for="petType">Cat or Dog?</label>
+                <input type="text" id="petType" name="petType"> <br>
+                <label for="breed">Breed of dog or cat</label>
+                <input type="text" id="breed" name="breed"> <br>
+                <label for="age">Age of animal</label>
+                <input type="text" id="age" name="age"> <br>
+                <label for="gender">Gender of animal?</label>
+                <input type="text" id="gender" name="gender"> <br>
+                <label for="alongC">Gets along with cats?</label>
+                <input type="text" id="alongC" name="alongC"> <br>
+                <label for="alongD">Gets along with dogs?</label>
+                <input type="text" id="alongD" name="alongD"> <br>
+                <label for="suitable">Is the pet suitable for a family with small children?</label>
+                <input type="text" id="suitable" name="suitable"> <br>
+                <label for="descrip">Describe in the space provided any specfic information on the pet you're
+                    adopting</label>
+                <textarea id="descrip" name="descrip"> </textarea> <br>
+                <label for="ownerName">Enter your full name</label>
+                <input type="text" id="ownerName" name="ownerName"> <br>
+                <label for="email">Enter your email address</label>
+                <input type="text" id="email" name="email"> <br>
+
+                <label for="submit"></label>
+                <input type="submit" id="submit" name="submit">
+                <label for="reset"></label>
+                <input type="reset" id="reset" name="reset"> <br>
+
+            </form>
+        </div>
+    </div>
+    <p id="error-message" style="color: red; display: none;">Please fill out all fields.</p>
+    <p id="error-message2" style="color: red; display: none;">Please provide a valid email format, and make sure the
+        length doesn't exceed 254 characters.</p>
+
+
+        <%- include('partials/footer') %>
+
+
+    <script src="clientSide&FormatValidation.js"></script>
+    <script src="displayTime.js"></script>
+    
+</body>

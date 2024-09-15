@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Home page</title>
+    <style>
+       
+
+        table {
+            border-collapse: collapse;
+
+        }
+
+        tr {
+            border: 1px solid black;
+
+        }
+
+        nav a {
+            display: block;
+            /* Make the link fill the container */
+            border: 1px solid black;
+            /* Add border to simulate the table cell */
+            margin: -1px;
+            /* Overlap borders to prevent double-thickness lines */
+            padding: 8px;
+            /* Add some padding for aesthetics */
+            text-decoration: none;
+            /* Optional: remove the underline from links */
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+    <div id="links">
+        <h3>Find what you're looking for</h3>
+        <div style="display: flex;">
+            <nav style="width: 25%;">
+                <table>
+
+                    <tr>
+                        <td><a href="/home">Home page</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="/find">Find a dog or cat</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/catCare">Cat care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/dogCare">Dog care</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/giveaway">Have a pet to give away?</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/contact">Contact us</a></td>
+                    </tr>
+
+
+                </table>
+            </nav>
+            <p style="text-align:left; margin-left:auto; width:75%">
+                Welcome to LimoDoc, your premier online destination where the joy of finding a furry companion meets the
+                ease and convenience of modern technology. At LimoDoc, we believe that every cat and dog deserves a
+                loving home, and every home deserves the joy and companionship that these faithful friends bring.
+
+                Embark on a heartwarming journey with us as you explore a wide array of adorable cats and dogs eagerly
+                waiting to become a part of your family. Our user-friendly website is designed to make your adoption
+                process as smooth and joyful as the moment you find your perfect match. From playful kittens to loyal
+                dogs, our extensive network ensures that you'll find a companion that fits your lifestyle, preferences,
+                and the size of your heart.
+
+                LimoDoc isn't just about adoption; it's a community of animal lovers committed to making a difference.
+                We provide detailed profiles for our furry friends, including their backstory, health status, and unique
+                personalities, ensuring that you're well-informed before making the loving decision to adopt.
+
+                Our mission goes beyond connecting pets with loving homes. We're dedicated to raising awareness about
+                the importance of adoption and responsible pet ownership, providing educational resources to help you
+                and your new companion enjoy a happy, healthy life together.<br>
+
+                Join us in our quest to make the world a better place, one adoption at a time. Whether you're looking to
+                open your heart and home to a new furry friend or seeking to support our cause, LimoDoc welcomes you.
+                Together, let's create endless stories of love, companionship, and new beginnings. Welcome to the
+                LimoDoc family, where every pet finds a home and every home finds joy.
+
+
+
+
+            </p>
+        </div>
+    </div>
+
+
+
+    <%- include('partials/footer') %>
+
+    <script src="displayTime.js"></script>
+
+
+</body>
