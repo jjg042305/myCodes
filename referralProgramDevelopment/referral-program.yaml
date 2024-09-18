@@ -1,0 +1,103 @@
+get:
+  tags:
+    - Referral Programs 
+  summary: Get a single referral program by ID
+  operationId: getReferralProgramByID
+  parameters: 
+    - name: id
+      in: path 
+      required: true
+      description: unique identifier for the referral program 
+      schema: 
+        type: integer 
+  responses:
+    200:
+      $ref: '../../components/responses/referral-programs/referral-program.yaml'
+    401:
+      $ref: '../../components/responses/400.yaml#/notAuthorized'
+    403:
+      $ref: '../../components/responses/400.yaml#/accessDenied'
+    404:
+      $ref: '../../components/responses/400.yaml#/pageNotFound'
+    500:
+      $ref: '../../components/responses/500.yaml#/unhandledException'
+
+put:
+  tags: 
+    - Referral Programs 
+  summary : Update a referral program by ID 
+  operationId: updateReferralProgram
+  parameters:
+      - name: id
+        in: path
+        required: true
+        description: Unique identifier for the referral program
+        schema:
+          type: integer
+  requestBody:
+    description: Referral program object that needs to be added
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            program_name:
+              type: string
+              description: Name of the referral program
+            program_title:
+              type: string
+              description: Title of the referral program
+            partner_id:
+              type: string
+              description: Name of the partner associated with the referral program
+            is_active:
+              type: boolean
+              description: Current status of the referral program
+            description: 
+              type: string
+              
+          required:
+            - program_name
+            - program_title
+            - partner
+            - is_active
+
+  responses:
+    202:
+      $ref: '../../components/responses/referral-programs/referral-program.yaml'
+    401:
+      $ref: '../../components/responses/400.yaml#/notAuthorized'
+    403:
+      $ref: '../../components/responses/400.yaml#/accessDenied'
+    404:
+      $ref: '../../components/responses/400.yaml#/pageNotFound'
+    422:
+      $ref: '../../components/responses/422.yaml#/default'
+    500:
+      $ref: '../../components/responses/500.yaml#/unhandledException'
+
+delete: 
+  tags:
+    - Referral Programs
+  summary: Delete a referral program by ID 
+  operationId: deleteReferralProgram
+  parameters: 
+    - name: id 
+      in: path 
+      required: true
+      description: Unique identifier for the referral program
+      schema: 
+        type: integer
+  responses: 
+    204:
+      $ref: '../../components/responses/200.yaml#/empty'
+    401:
+      $ref: '../../components/responses/400.yaml#/notAuthorized'
+    403:
+      $ref: '../../components/responses/400.yaml#/accessDenied'
+    404:
+      $ref: '../../components/responses/400.yaml#/pageNotFound'
+    500:
+      $ref: '../../components/responses/500.yaml#/unhandledException'
+

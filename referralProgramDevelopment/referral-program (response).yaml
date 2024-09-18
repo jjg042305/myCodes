@@ -1,0 +1,35 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: Unique identifier for the referral program
+            program_name:
+              type: string
+              description : Name of the referral program
+            program_title:
+              type: string 
+              description: title of the referral program 
+            partner_name:
+              type: string
+              description: name of the partner associated with the referral program
+            partner_id:
+              type: integer
+              description: id of the partner associated with the referral program 
+            created_at:
+              type: string 
+              format: date 
+              description : Date of the referral program was created 
+            is_active:
+              type: boolean 
+              description: current status of referral program
+            description:
+                type: string
+                description: Block of text that describes the referral program
+              
