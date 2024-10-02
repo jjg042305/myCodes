@@ -1,10 +1,10 @@
 # Referral Program Backend (PHP & Laravel)
 
-This project is a backend implementation for a referral program built with PHP and Laravel. It manages the creation, updating, and deletion of referral programs, along with handling user accounts, partner associations, and referral tracking.
+This relates to a backend implementation for a referral program built with PHP and Laravel. It manages the creation, updating, and deletion of referral programs, along with handling user accounts, partner associations, and referral tracking.
 
-*Note that these files are part of a broader codebase that belongs to Blu Loyalty. By respect to the company's policy rules and the sensitive nature of the codebase, I am only allowed to publish the files I developed myself.*
+*Note that these files are part of a broader codebase that belongs to blu AI. For confidentiality purposes, only the code I worked on can be published here.*
 
-*As a result, the files included here may seem out of context or incomplete since they are extracted from a much larger system, and their original directory structure cannot be fully replicated. Therefore, testing this code directly as a standalone project might be challenging. However, the provided files demonstrate the logic and functionality I implemented during my internship.*
+*As a result, their original directory structure cannot be fully replicated and the files included may seem incomplete. Therefore, testing this code directly as a standalone project might not be possible. However, the provided files demonstrate the logic and functionality I implemented during my internship.*
 ## Features : 
 1. Referral Program Management:
 - Create, update, delete, and view referral programs.
