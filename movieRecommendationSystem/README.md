@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Movie Recommendation System Using AI Techniques</title>
+    
 </head>
 <body>
     <h1><b>Movie Recommendation System Using AI Techniques</b></h1>
