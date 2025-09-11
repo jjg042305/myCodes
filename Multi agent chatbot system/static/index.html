@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .chatbox {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .messages {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+    .message {
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .user {
+      background-color: #d0f0fd;
+      text-align: right;
+    }
+    .bot {
+      background-color: #f0f0f0;
+      text-align: left;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+     .spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #007bff;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+      display: none; /* Initially hidden */
+      margin: 10px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="chatbox">
+    <h2>Chat with Your Bot</h2>
+    <div class="messages" id="chat"></div>
+    <div class="spinner" id="spinner"></div>
+    <input type="text" id="userInput" placeholder="Type your question here...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    const chatHistory = [];
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const chat = document.getElementById('chat');
+      const userText = input.value.trim();
+      const spinner = document.getElementById('spinner');
+
+      if (!userText) return;
+
+      // Add user message to chat
+      chat.innerHTML += `<div class='message user'>${userText}</div>`;
+     // chatHistory.push({ role: "user", content: userText });
+      input.value = '';
+// Show spinner
+      spinner.style.display = 'block';
+
+      // Send query to backend
+      try {
+        const response = await fetch('http://127.0.0.1:8000/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ message: userText, 
+          //  history: chatHistory
+          })
+        });
+        const data = await response.json();
+        const botReply = data.response;
+        // Hide spinner and add bot message to chat
+        spinner.style.display = 'none';
+        // Add bot message to chat
+        chat.innerHTML += `<div class='message bot'>${botReply}</div>`;
+        chat.scrollTop = chat.scrollHeight;
+      //  chatHistory.push({ role: "ai", content: botReply });
+        } catch (error) {
+        // Hide spinner and add error message
+        spinner.style.display = 'none';
+        chat.innerHTML += `<div class='message bot'>Error: Could not connect to server.</div>`;
+      }
+    }
+  </script>
+</body>
+</html>
