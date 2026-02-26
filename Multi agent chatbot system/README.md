@@ -1,4 +1,4 @@
-# COMP474Project2: Multi-Agent Chatbot System
+# Multi-Agent Chatbot System
 
 This project implements a multi-agent chatbot system that leverages Ollama for intelligent conversations across multiple domains. The chatbot adapts dynamically based on context, past interactions, and external knowledge sources.
 
